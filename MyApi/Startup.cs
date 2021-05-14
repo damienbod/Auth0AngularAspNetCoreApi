@@ -106,7 +106,7 @@ namespace MyApi
                 {
                     p.Requirements.Add(new UserApiScopeHandlerRequirement());
                     // Validate id of application for which the token was created
-                    //p.RequireClaim("azp", "AScjLo16UadTQRIt2Zm1xLHVaEaE1feA");
+                    p.RequireClaim("azp", "Ujh5oSBAFr1BuilgkZPcMWEgnuREgrwU");
                 });
             });
 
