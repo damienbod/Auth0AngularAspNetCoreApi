@@ -1,7 +1,8 @@
 <div>Welcome to home Route</div>
 
-<div *ngIf="isAuthenticated; else noAuth">
+<div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">
   <button (click)="logout()">Logout</button>
+  <button (click)="callApi()">Call API</button>
   <button (click)="logoffAndRevokeTokens()">Logout and revoke tokens</button>
   <button (click)="revokeRefreshToken()">Revoke refresh token</button>
   <button (click)="refreshSession()">Refresh session</button>
@@ -16,6 +17,8 @@
   <pre>{{ userData$ | async | json }}</pre>
 
   <br />
+
+
 </div>
 
 <ng-template #noAuth>
@@ -23,5 +26,7 @@
   <hr />
 </ng-template>
 
-Configuration loaded:
-<pre>{{ configuration | json }}</pre>
+<h2>API data:</h2>
+<pre>
+  {{ dataFromAzureProtectedApi$ | async | json }}
+</pre>

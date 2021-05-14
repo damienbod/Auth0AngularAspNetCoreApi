@@ -1,50 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import { OidcClientNotification, OidcSecurityService, PublicConfiguration } from 'angular-auth-oidc-client';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.component.html',
 })
 export class HomeComponent implements OnInit {
-  configuration: PublicConfiguration;
-  //userDataChanged$: Observable<OidcClientNotification<any>>;
   userData$: Observable<any>;
-  isAuthenticated = false;
-
-  constructor(public oidcSecurityService: OidcSecurityService) {
-    this.configuration = this.oidcSecurityService.configuration;
-    this.userData$ = this.oidcSecurityService.userData$;
-  }
+  dataFromAzureProtectedApi$: Observable<any>;
+  isAuthenticated$: Observable<boolean>;
+  constructor(
+    private authservice: AuthService,
+    private httpClient: HttpClient
+  ) {}
 
   ngOnInit() {
-    this.configuration = this.oidcSecurityService.configuration;
-    this.userData$ = this.oidcSecurityService.userData$;
-
-    this.oidcSecurityService.isAuthenticated$.subscribe((authenticated) => {
-      this.isAuthenticated = authenticated;
-
-      console.warn('authenticated: ', authenticated);
-    });
+    this.userData$ = this.authservice.userData;
+    this.isAuthenticated$ = this.authservice.signedIn;
   }
 
+  callApi() {
+    this.dataFromAzureProtectedApi$ = this.httpClient
+      .get('https://localhost:44390/weatherforecast')
+      .pipe(catchError((error) => of(error)));
+  }
   login() {
-    this.oidcSecurityService.authorize();
+    this.authservice.signIn();
   }
 
   refreshSession() {
-    this.oidcSecurityService.forceRefreshSession().subscribe((result) => console.log(result));
+    this.authservice.forceRefreshSession().subscribe((result) => console.log(result));
   }
 
   logout() {
-    this.oidcSecurityService.logoff();
+    this.authservice.signOut();
   }
 
   logoffAndRevokeTokens() {
-    this.oidcSecurityService.logoffAndRevokeTokens().subscribe((result) => console.log(result));
+    this.authservice.logoffAndRevokeTokens().subscribe((result) => console.log(result));
   }
 
   revokeRefreshToken() {
-    this.oidcSecurityService.revokeRefreshToken().subscribe((result) => console.log(result));
+    this.authservice.revokeRefreshToken().subscribe((result) => console.log(result));
   }
 }
