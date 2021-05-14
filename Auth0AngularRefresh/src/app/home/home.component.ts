@@ -15,7 +15,11 @@ export class HomeComponent implements OnInit {
   constructor(
     private authservice: AuthService,
     private httpClient: HttpClient
-  ) {}
+  ) {
+    this.userData$ =  of(null);
+    this.isAuthenticated$  = of(false);
+    this.dataFromAzureProtectedApi$ = of(null);
+  }
 
   ngOnInit() {
     this.userData$ = this.authservice.userData;
@@ -24,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   callApi() {
     this.dataFromAzureProtectedApi$ = this.httpClient
-      .get('https://localhost:44390/weatherforecast')
+      .get('https://localhost:44390/api/UserOne')
       .pipe(catchError((error) => of(error)));
   }
   login() {

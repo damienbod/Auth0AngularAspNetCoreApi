@@ -8,6 +8,9 @@ import { AuthConfigModule } from './auth-config.module';
 import { HomeComponent } from './home/home.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, UnauthorizedComponent],
   imports: [
@@ -19,8 +22,15 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
       { path: 'unauthorized', component: UnauthorizedComponent },
     ]),
     AuthConfigModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {
