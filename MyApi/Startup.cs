@@ -52,7 +52,7 @@ namespace MyApi
             }).AddJwtBearer(options =>
             {
                 options.Authority = "https://dev-damienbod.eu.auth0.com/";
-                options.Audience = "https://auth0-api1";
+                options.Audience = "https://auth0-api-spa";
             });
 
             services.AddSwaggerGen(c =>
@@ -106,7 +106,7 @@ namespace MyApi
                 {
                     p.Requirements.Add(new UserApiScopeHandlerRequirement());
                     // Validate id of application for which the token was created
-                    p.RequireClaim("azp", "AScjLo16UadTQRIt2Zm1xLHVaEaE1feA");
+                    //p.RequireClaim("azp", "AScjLo16UadTQRIt2Zm1xLHVaEaE1feA");
                 });
             });
 

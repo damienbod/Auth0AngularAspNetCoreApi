@@ -8,11 +8,14 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
       redirectUrl: window.location.origin,
       postLogoutRedirectUri: window.location.origin,
       clientId: 'Ujh5oSBAFr1BuilgkZPcMWEgnuREgrwU',
-      scope: 'openid profile offline_access auth0-user-api-one',
+      scope: 'openid profile offline_access auth0-user-api-spa',
       responseType: 'code',
       silentRenew: true,
       useRefreshToken: true,
       logLevel: LogLevel.Debug,
+      customParams: {
+        "audience": "https://auth0-api-spa"
+      }
     });
 }
 

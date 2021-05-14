@@ -20,7 +20,7 @@ namespace MyApi
             if (scopeClaim != null)
             {
                 var scopes = scopeClaim.Value.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-                if (scopes.Any(t => t == "auth0-user-api-one"))
+                if (scopes.Any(t => t == "auth0-user-api-spa"))
                 {
                     context.Succeed(requirement);
                 }
