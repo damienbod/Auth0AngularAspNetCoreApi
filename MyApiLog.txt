@@ -1,0 +1,14 @@
+2021-05-14 15:41:19.768 +02:00 [INF] User profile is available. Using 'C:\Users\damien.bowden\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-14 15:41:20.149 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44390/index.html - -
+2021-05-14 15:41:20.410 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44390/index.html - - - 200 - text/html;charset=utf-8 264.7255ms
+2021-05-14 15:41:20.454 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44390/swagger-ui.css - -
+2021-05-14 15:41:20.455 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44390/swagger-ui-standalone-preset.js - -
+2021-05-14 15:41:20.455 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44390/swagger-ui-bundle.js - -
+2021-05-14 15:41:20.503 +02:00 [INF] The file /swagger-ui-bundle.js was not modified
+2021-05-14 15:41:20.503 +02:00 [INF] The file /swagger-ui.css was not modified
+2021-05-14 15:41:20.503 +02:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2021-05-14 15:41:20.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44390/swagger-ui-standalone-preset.js - - - 304 - application/javascript 50.7351ms
+2021-05-14 15:41:20.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44390/swagger-ui-bundle.js - - - 304 - application/javascript 50.9809ms
+2021-05-14 15:41:20.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44390/swagger-ui.css - - - 304 - text/css 51.3065ms
+2021-05-14 15:41:20.888 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44390/swagger/v1/swagger.json - -
+2021-05-14 15:41:21.080 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44390/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 191.7177ms
