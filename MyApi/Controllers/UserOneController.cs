@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace MyApi.Controllers
@@ -18,13 +16,6 @@ namespace MyApi.Controllers
     [Route("api/[controller]")]
     public class UserOneController : ControllerBase
     {
-        private readonly ILogger<UserOneController> _logger;
-
-        public UserOneController(ILogger<UserOneController> logger)
-        {
-            _logger = logger;
-        }
-
         /// <summary>
         /// returns data id the correct Auth0 access token is used.
         /// </summary>
