@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   forceRefreshSession() {
-    return this.oidcSecurityService.forceRefreshSession();
+    return this.oidcSecurityService.forceRefreshSession({ scope: 'openid profile offline_access auth0-user-api-spa' });
   }
 
   revokeRefreshToken() {
