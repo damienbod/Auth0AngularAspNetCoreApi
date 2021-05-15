@@ -29,7 +29,4 @@ namespace MyApi
             return Task.CompletedTask;
         }
     }
-
-    public class UserApiScopeHandlerRequirement : IAuthorizationRequirement
-    { }
 }
