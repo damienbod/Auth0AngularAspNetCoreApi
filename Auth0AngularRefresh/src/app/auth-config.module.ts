@@ -19,7 +19,6 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
       customParamsRefreshToken: {
         scope: 'openid profile offline_access auth0-user-api-spa',
       },
-
     });
 }
 
