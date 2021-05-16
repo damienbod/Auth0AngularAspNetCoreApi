@@ -14,8 +14,12 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
       useRefreshToken: true,
       logLevel: LogLevel.Debug,
       customParams: {
-        "audience": "https://auth0-api-spa"
-      }
+        audience: 'https://auth0-api-spa',
+      },
+      customParamsRefreshToken: {
+        scope: 'openid profile offline_access auth0-user-api-spa',
+      },
+
     });
 }
 
