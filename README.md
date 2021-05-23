@@ -1,5 +1,7 @@
 # Auth0 with Angular and an ASP.NET Core API
 
+[![.NET](https://github.com/damienbod/Auth0AngularAspNetCoreApi/workflows/.NET/badge.svg)](https://github.com/damienbod/Auth0AngularAspNetCoreApi/actions?query=workflow%3A.NET) 
+
 ## Blogs
 
 Secure an Angular SPA and an ASP.NET Core API using Auth0
