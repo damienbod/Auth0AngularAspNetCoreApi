@@ -6,6 +6,10 @@
 
 Secure an Angular SPA and an ASP.NET Core API using Auth0
 
+## History
+
+2021-07-01 Updated to OIDC V12
+
 ## Links
 
 https://www.npmjs.com/package/angular-auth-oidc-client
