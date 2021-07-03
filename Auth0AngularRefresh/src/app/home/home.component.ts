@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
-import { ConfigAuthenticatedResult } from 'angular-auth-oidc-client';
+import { AuthenticatedResult } from 'angular-auth-oidc-client';
 
 @Component({
   selector: 'app-home',
@@ -12,19 +12,23 @@ import { ConfigAuthenticatedResult } from 'angular-auth-oidc-client';
 export class HomeComponent implements OnInit {
   userData$: Observable<any>;
   dataFromAzureProtectedApi$: Observable<any>;
-  isAuthenticated$: Observable<boolean | ConfigAuthenticatedResult[]>;
+  isAuthenticated = false;
   constructor(
     private authservice: AuthService,
     private httpClient: HttpClient
   ) {
     this.userData$ =  of(null);
-    this.isAuthenticated$  = of(false);
     this.dataFromAzureProtectedApi$ = of(null);
   }
 
   ngOnInit() {
     this.userData$ = this.authservice.userData;
-    this.isAuthenticated$ = this.authservice.signedIn;
+
+    this.authservice.signedIn.subscribe(({ isAuthenticated }) => {
+      this.isAuthenticated = isAuthenticated;
+
+      console.warn('authenticated: ', isAuthenticated);
+    });
   }
 
   callApi() {
