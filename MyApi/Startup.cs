@@ -120,17 +120,21 @@ namespace MyApi
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSecurityHeaders(
+                SecurityHeadersDefinitions
+                    .GetHeaderPolicyCollection(env.IsDevelopment()));
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "User API");
-                c.RoutePrefix = string.Empty;
-            });
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "User API");
+                    c.RoutePrefix = string.Empty;
+                });
+            }
 
             // only needed for browser clients
             app.UseCors("AllowAllOrigins");
