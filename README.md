@@ -10,6 +10,8 @@ https://damienbod.com/2021/05/24/secure-an-angular-spa-and-an-asp-net-core-api-u
 
 ## History
 
+2021-08-22 Updated packages, improved security headers
+
 2021-07-01 Updated to OIDC V12
 
 ## Links
