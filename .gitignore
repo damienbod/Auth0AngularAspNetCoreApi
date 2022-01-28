@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 
 /MyApiLog.txt
+/Auth0AngularRefresh/.angular/cache
