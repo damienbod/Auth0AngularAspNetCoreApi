@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace MyApi
-{
-    public class UserApiScopeHandlerRequirement : IAuthorizationRequirement
-    { }
-}
+namespace MyApi;
+
+public class UserApiScopeHandlerRequirement : IAuthorizationRequirement{ }
