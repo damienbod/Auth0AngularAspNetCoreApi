@@ -351,3 +351,4 @@ MigrationBackup/
 
 /MyApiLog.txt
 /Auth0AngularRefresh/.angular/cache
+/_logsMyApi.txt
