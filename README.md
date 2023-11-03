@@ -10,19 +10,14 @@ https://damienbod.com/2021/05/24/secure-an-angular-spa-and-an-asp-net-core-api-u
 
 ## History
 
-2023-02-19 Updated to .NET 7 and Angular 15
-
-2022-10-21 Updated packages
-
-2022-04-18 Updated packages, OIDC angular V14, using nullable
-
-2022-02-11 Updated packages and namespaces
-
-2022-01-28 Updated packages, .NET 6
-
-2021-08-22 Updated packages, improved security headers
-
-2021-07-01 Updated to OIDC V12
+- 2023-02-19 Updated packages, fixed security headers
+- 2023-02-19 Updated to .NET 7 and Angular 15
+- 2022-10-21 Updated packages
+- 2022-04-18 Updated packages, OIDC angular V14, using nullable
+- 2022-02-11 Updated packages and namespaces
+- 2022-01-28 Updated packages, .NET 6
+- 2021-08-22 Updated packages, improved security headers
+- 2021-07-01 Updated to OIDC V12
 
 ## Links
 
