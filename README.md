@@ -19,6 +19,7 @@ https://damienbod.com/2021/05/24/secure-an-angular-spa-and-an-asp-net-core-api-u
 
 ## History
 
+- 2023-11-26 Updated .NET 8
 - 2023-11-03 Updated packages, fixed security headers
 - 2023-02-19 Updated to .NET 7 and Angular 15
 - 2022-10-21 Updated packages
